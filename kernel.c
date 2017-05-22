@@ -103,5 +103,7 @@ extern "C" /* Use C linkage for kernel_main. */
 #endif
 void kernel_main(void){
     terminal_initialize();
-    terminal_writestring("Hello, kernel World!\n");
+    terminal_row  = 7;
+    terminal_column = 28;
+    terminal_writestring("Hello, kernel World!");
 }
