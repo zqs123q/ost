@@ -106,4 +106,6 @@ void kernel_main(void){
     terminal_row  = 7;
     terminal_column = 28;
     terminal_writestring("Hello, kernel World!");
+	while(true)
+		/*nothing*/;
 }

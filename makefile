@@ -16,10 +16,11 @@ myos.bin: boot.o kernel.o linker.ld
 
 kernel.o: kernel.c
 	@# 配置好交叉编译环境后,记得把相应的命令加入到环境变量
-	i686-elf-gcc -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
+	@# -MD 输出依赖信息
+	i686-elf-gcc -MD -c kernel.c -o kernel.o -std=gnu99 -ffreestanding -O2 -Wall -Wextra
 
 boot.o: boot.s
 	i686-elf-as boot.s -o boot.o
 
 clean:
-	rm -rf *.o myos.* isodir
+	rm -rf *.o myos.* isodir *.d
